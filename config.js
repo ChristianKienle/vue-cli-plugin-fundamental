@@ -1,6 +1,6 @@
 module.exports = {
   dependencies: {
-    'fundamental-vue': '^0.0.10-beta',
+    'fundamental-vue': '^0.0.13-beta',
     'fiori-fundamentals': '^1.4.3'
   },
   devDependencies: {
