@@ -1,40 +1,25 @@
 <template>
   <FdShell>
-      <FdShellHeader> <FdShellHeader>
-      <FdShellBar>
-        <FdShellBarGroup position="start">
-          <FdShellBarLogo
-            src="/images/product-logo.png"
-            srcset="/images/product-logo.png 1x, /images/product-logo@2x.png 2x"
-          />
-          <FdShellBarProduct>Product Name</FdShellBarProduct>
-        </FdShellBarGroup>
-        <FdShellBarGroup position="end">
-          <FdShellBarActions>
-            <FdShellBarAction>
-              <FdShellBarUserMenu>
-                <FdMenuItem>Sign out</FdMenuItem>
-              </FdShellBarUserMenu>
-            </FdShellBarAction>
-          </FdShellBarActions>
-        </FdShellBarGroup>
-      </FdShellBar>
-    </FdShellHeader>
-    </FdShellHeader>
-      <FdApp>
-        <FdAppNavigation orientation="vertical">
-          <FdSideNav>
-            <FdSideNavList :items="navigationItems" />
-          </FdSideNav>
-        </FdAppNavigation>
-        <FdAppMain><router-view /></FdAppMain>
-      </FdApp>
-    </FdShell>
+    <FdShellHeader><ShellBar /></FdShellHeader>
+    <FdApp>
+      <FdAppNavigation orientation="vertical">
+        <FdSideNav>
+          <FdSideNavList :items="navigationItems" />
+        </FdSideNav>
+      </FdAppNavigation>
+      <FdAppMain>
+        <router-view />
+      </FdAppMain>
+    </FdApp>
+  </FdShell>
 </template>
 
 <script>
+import ShellBar from '@/components/ShellBar.vue'
+
 export default {
   name: "App",
+  components: { ShellBar },
   data() {
     return {
       navigationItems: [

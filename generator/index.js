@@ -18,6 +18,7 @@ module.exports = (api, options = {}, rootOptions) => {
   if (layoutType === "full") {
     api.render({
       "./src/router.js": `./templates/src/router.js`,
+      "./src/components/ShellBar.vue": './templates/src/components/ShellBar.vue',
       "./src/views/Home.vue": "./templates/src/views/Home.vue",
       "./src/views/About.vue": "./templates/src/views/About.vue",
       "./public/images/product-logo.png":
