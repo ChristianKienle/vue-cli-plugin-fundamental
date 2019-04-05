@@ -1,12 +1,12 @@
 module.exports = layoutType => {
   // We only need vue-router for the full layout
   const router = layoutType !== "full" ? {} : {
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.2"
   };
   return {
     dependencies: {
-      "fundamental-vue": "^0.1.0",
-      "fiori-fundamentals": "^1.4.3",
+      "fundamental-vue": "^0.3.0",
+      "fiori-fundamentals": "^1.5.1",
       ...router
     },
     devDependencies: {

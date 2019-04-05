@@ -1,6 +1,6 @@
 {
   "name": "vue-cli-plugin-fundamental",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "Vue CLI plugin for Fundamental Vue",
   "main": "index.js",
   "repository": {
@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/ChristianKienle/vue-cli-plugin-fundamental/issues"
   },
-  "homepage": "https://github.com/ChristianKienle/vue-cli-plugin-fundamentalt#readme"
+  "homepage": "https://github.com/ChristianKienle/vue-cli-plugin-fundamentalt#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0"
+  }
 }

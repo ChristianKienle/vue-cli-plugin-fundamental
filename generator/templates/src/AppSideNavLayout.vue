@@ -1,9 +1,11 @@
 <template>
   <FdShell>
-    <FdShellHeader><ShellBar /></FdShellHeader>
+    <FdShellHeader>
+      <ShellBar />
+    </FdShellHeader>
     <FdApp>
       <FdAppNavigation orientation="vertical">
-        <FdSideNav>
+        <FdSideNav mode="router">
           <FdSideNavList :items="navigationItems" />
         </FdSideNav>
       </FdAppNavigation>
@@ -15,7 +17,7 @@
 </template>
 
 <script>
-import ShellBar from '@/components/ShellBar.vue'
+import ShellBar from "@/components/ShellBar.vue";
 
 export default {
   name: "App",
@@ -23,9 +25,8 @@ export default {
   data() {
     return {
       navigationItems: [
-        { id: "home", name: "Home", icon: "home", to: { name: "home" } },
+        { name: "Home", icon: "home", to: { name: "home" } },
         {
-          id: "about",
           name: "About",
           icon: "sap-logo-shape",
           to: { name: "about" }
