@@ -1,5 +1,5 @@
 <template>
-  <FdSection title="Home">
-    <FdPanel>Home page</FdPanel>
-  </FdSection>
+  <fd-section title="Home">
+    <fd-panel>Home page</fd-panel>
+  </fd-section>
 </template>

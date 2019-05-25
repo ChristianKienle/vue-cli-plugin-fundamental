@@ -1,20 +1,24 @@
 <template>
-  <FdShellBar>
-    <FdShellBarGroup position="start">
-      <FdShellBarLogo
+  <fd-shell-bar>
+    <fd-shell-bar-group position="start">
+      <fd-shell-bar-logo
         src="/images/product-logo.png"
         srcset="/images/product-logo.png 1x, /images/product-logo@2x.png 2x"
       />
-      <FdShellBarProduct>Product Name</FdShellBarProduct>
-    </FdShellBarGroup>
-    <FdShellBarGroup position="end">
-      <FdShellBarActions>
-        <FdShellBarAction>
-          <FdShellBarUserMenu>
-            <FdMenuItem>Sign out</FdMenuItem>
-          </FdShellBarUserMenu>
-        </FdShellBarAction>
-      </FdShellBarActions>
-    </FdShellBarGroup>
-  </FdShellBar>
+      <fd-shell-bar-product>Product Name</fd-shell-bar-product>
+    </fd-shell-bar-group>
+    <fd-shell-bar-group position="end">
+      <fd-shell-bar-actions>
+        <fd-shell-bar-action>
+          <fd-shell-bar-user-menu>
+             <fd-menu>
+              <fd-menu-list>
+                <fd-menu-item>Sign out</fd-menu-item>
+              </fd-menu-list>
+            </fd-menu>
+          </fd-shell-bar-user-menu>
+        </fd-shell-bar-action>
+      </fd-shell-bar-actions>
+    </fd-shell-bar-group>
+  </fd-shell-bar>
 </template>

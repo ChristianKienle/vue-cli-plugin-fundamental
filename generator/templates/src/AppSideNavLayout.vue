@@ -1,19 +1,20 @@
 <template>
-  <FdShell>
-    <FdShellHeader>
-      <ShellBar />
-    </FdShellHeader>
-    <FdApp>
-      <FdAppNavigation orientation="vertical">
-        <FdSideNav mode="router">
-          <FdSideNavList :items="navigationItems" />
-        </FdSideNav>
-      </FdAppNavigation>
-      <FdAppMain>
+  <fd-shell>
+    <fd-shell-header>
+      <shell-bar />
+    </fd-shell-header>
+    <fd-app>
+      <!-- inlien style needed to work around a bug -->
+      <fd-app-navigation style="min-width: 250px;" orientation="vertical">
+        <fd-side-nav mode="router">
+          <fd-side-nav-list :items="navigationItems" />
+        </fd-side-nav>
+      </fd-app-navigation>
+      <fd-app-main>
         <router-view />
-      </FdAppMain>
-    </FdApp>
-  </FdShell>
+      </fd-app-main>
+    </fd-app>
+  </fd-shell>
 </template>
 
 <script>

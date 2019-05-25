@@ -5,8 +5,8 @@ module.exports = layoutType => {
   };
   return {
     dependencies: {
-      "fundamental-vue": "^0.3.0",
-      "fiori-fundamentals": "^1.5.1",
+      "fundamental-vue": "^0.9.0",
+      "fiori-fundamentals": "^1.5.8",
       ...router
     },
     devDependencies: {
