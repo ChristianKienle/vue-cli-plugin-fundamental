@@ -5,12 +5,12 @@ module.exports = layoutType => {
   };
   return {
     dependencies: {
-      "fundamental-vue": "^0.9.0",
-      "fiori-fundamentals": "^1.5.8",
+      "fundamental-vue": "^0.12.0",
+      "fundamental-styles": "^0.1.0",
       ...router
     },
     devDependencies: {
-      "node-sass": "^4.11.0",
+      "node-sass": "^4.12.0",
       "sass-loader": "^7.1.0"
     },
     successMessage: "Successfully installed Fundamental Vue."

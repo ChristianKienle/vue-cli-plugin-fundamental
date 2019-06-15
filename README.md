@@ -24,7 +24,7 @@ This plugin will add the following dependencies to your `package.json`:
 
 - **Dependencies:**
   - `fundamental-vue`: The actual Vue components.
-  - `fiori-fundamentals`: SCSS styles to make the components look good.
+  - `fundamental-styles`: SCSS styles to make the components look good.
 - **DevDependencies:**
   - `node-sass`
   - `sass-loader`

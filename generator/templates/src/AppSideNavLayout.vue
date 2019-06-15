@@ -4,7 +4,7 @@
       <shell-bar />
     </fd-shell-header>
     <fd-app>
-      <!-- inlien style needed to work around a bug -->
+      <!-- inline style needed to work around a bug -->
       <fd-app-navigation style="min-width: 250px;" orientation="vertical">
         <fd-side-nav mode="router">
           <fd-side-nav-list :items="navigationItems" />
