@@ -1,24 +1,26 @@
+// @ts-check
+const fs = require("fs");
 const getConfig = require("./../config");
 
-/**
- *
- * @typedef {object} Options
- * @prop {string=} layoutType
- */
 module.exports = (api, options = {}, rootOptions) => {
-  const { layoutType = "full" } = options;
-  const { dependencies, devDependencies, successMessage } = getConfig(
-    layoutType
-  );
+  const {
+    dependencies,
+    devDependencies,
+    successMessage,
+    layoutType,
+    virtualizedListSupportType
+  } = getConfig(options);
 
   api.extendPackage({ dependencies });
   const layoutFile = layoutType === "full" ? "AppSideNavLayout.vue" : "App.vue";
 
   api.injectImports(api.entryFile, `import './plugins/fundamental-vue.js'`);
+
   if (layoutType === "full") {
     api.render({
       "./src/router.js": `./templates/src/router.js`,
-      "./src/components/ShellBar.vue": './templates/src/components/ShellBar.vue',
+      "./src/components/ShellBar.vue":
+        "./templates/src/components/ShellBar.vue",
       "./src/views/Home.vue": "./templates/src/views/Home.vue",
       "./src/views/About.vue": "./templates/src/views/About.vue",
       "./public/images/product-logo.png":
@@ -31,16 +33,20 @@ module.exports = (api, options = {}, rootOptions) => {
 
   api.render({
     "./src/App.vue": `./templates/src/${layoutFile}`,
-    "./src/plugins/fundamental-vue.js":
-      "./templates/src/plugins/fundamental-vue.js",
     "./src/fundamental.scss": "./templates/src/fundamental.scss"
+  });
+  api.render({
+    "./src/plugins/fundamental-vue.js":
+      "./templates/src/plugins/fundamental-vue.js"
+  }, {
+    fullVirtualizedListSupport: virtualizedListSupportType === "with-ie11",
+    partialVirtualizedListSupport: virtualizedListSupportType === "without-ie11" || virtualizedListSupportType === "with-ie11",
   });
 
   api.extendPackage({ devDependencies });
 
   api.onCreateComplete(() => {
     if (layoutType === "full") {
-      const fs = require("fs");
       const contentMain = fs.readFileSync(api.entryFile, { encoding: "utf-8" });
       const lines = contentMain.split(/\r?\n/g);
 
